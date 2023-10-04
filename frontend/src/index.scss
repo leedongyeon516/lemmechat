@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+$bts: rgb(247, 227, 253) !important;
+$default: rgb(254, 254, 254) !important;
+$sky: rgb(231, 241, 247) !important;
+$land: rgb(22, 87, 22) !important;
+$sunset: rgb(244, 209, 216) !important;
+$night: #333 !important;
+$accent-primary: rgb(208, 248, 203) !important;
+$accent-secondary: #fff !important;
+$accent-tertiary: #666 !important;
+
+$none: none !important;
+$unset: unset !important;
+$inherit: inherit !important;
+
+$breakpoint-tablet: 996px;
+
+.bts,
+.bts + .ce-message-list {
+  background-color: $bts;
+}
+.default,
+.default + .ce-message-list {
+  background-color: $default;
+}
+.sky,
+.sky + .ce-message-list {
+  background-color: $sky;
+}
+.land,
+.land .ce-chat-list-column,
+.land + .ce-message-list,
+.land + .ce-message-list .ce-message-date-text,
+.land + .ce-message-list .ce-their-message-sender-username,
+.land + .ce-message-list .ce-their-message-timestamp,
+.land .ce-chat-settings-column {
+  color: $accent-secondary;
+  background-color: $land;
+}
+.land .ce-chat-list input {
+  color: $default;
+}
+.land .ce-chat-card-title {
+  color: $accent-tertiary;
+}
+.sunset,
+.sunset + .ce-message-list {
+  background-color: $sunset;
+}
+.night,
+.night .ce-chat-list-column,
+.night + .ce-message-list,
+.night + .ce-message-list .ce-message-date-text,
+.night + .ce-message-list .ce-their-message-sender-username,
+.night + .ce-message-list .ce-their-message-timestamp,
+.night .ce-chat-settings-column {
+  color: $accent-secondary;
+  background-color: $night;
+}
+.night .ce-chat-list input {
+  color: $default;
+}
+.night .ce-chat-card-title {
+  color: $accent-tertiary;
+}
+
+body#root:first-child {
+  height: 100vh;
+}
+
+input {
+  font-family: 'Courier New', Courier, monospace !important;
+  background-color: transparent;
+  border: $none;
+}
+
+input:focus {
+  outline: $none;
+}
+
+.splash,
+.register,
+.login,
+.four-o-four {
+  font-family: 'Poppins', sans-serif;
+  background-image: linear-gradient(
+    90deg,
+    rgb(0, 0, 50) 0%,
+    rgb(36, 131, 255) 100%
+  ) !important;
+
+  form {
+    .error-true {
+      color: red;
+    }
+
+    .error-false {
+      color: black;
+    }
+  }
+}
+
+.register input,
+.login input {
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 1.5px;
+  background-color: $default;
+}
+
+.user-avatar img {
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.mobile-nav-btn {
+  width: 35px;
+  position: fixed;
+  top: 25px;
+  display: none;
+  cursor: pointer;
+}
+
+.ce-ice-breaker-text {
+  display: $none;
+}
+
+.ce-chat-list {
+  background-color: $inherit;
+
+  .ce-chat-card {
+    background-color: $unset;
+    margin: 0.25rem 0.75rem;
+
+    &.ce-active-chat-card {
+      background-color: $accent-primary;
+    }
+  }
+
+  .ce-avatar.ce-chat-card-avatar {
+    background-color: $accent-tertiary;
+    background-image: $unset;
+    opacity: 0.25;
+  }
+}
+
+.ce-chat-feed-column {
+  border-left: $unset;
+  border-right: $unset;
+
+  .ce-message-list {
+    height: 100vh !important;
+    padding-bottom: 133px;
+
+    .ce-message-list-content {
+      padding: 10px;
+    }
+  }
+}
+
+.form-container {
+  width: 50%;
+  position: fixed;
+  bottom: 0;
+
+  .input-box {
+    width: 100%;
+    height: 133px;
+
+    input {
+      width: 100%;
+      border: $none;
+      border-bottom: 1px solid $accent-tertiary;
+    }
+
+    input:focus {
+      outline: $none;
+    }
+
+    .form-btn-box {
+      .chat-room-color-box {
+        right: 0;
+        bottom: 100px;
+
+        .chat-room-color-btn {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin-bottom: 10px;
+          cursor: pointer;
+        }
+
+        .theme {
+          filter: drop-shadow(0 0 0.5rem);
+        }
+
+        .bts {
+          background-color: $bts;
+        }
+        .default {
+          background-color: $default;
+        }
+        .sky {
+          background-color: $sky;
+        }
+        .land {
+          background-color: $land;
+        }
+        .sunset {
+          background-color: $sunset;
+        }
+        .night {
+          background-color: $night;
+        }
+      }
+    }
+
+    .form-btn-box [role='presentation'] {
+      display: flex;
+    }
+
+    .form-btn-box input svg,
+    .form-btn-box svg {
+      width: 40px;
+      padding: 0 5px;
+      cursor: pointer;
+    }
+  }
+
+  .attachment-box {
+    bottom: 60%;
+
+    img {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      cursor: pointer;
+    }
+
+    img:hover {
+      opacity: 0.6;
+    }
+
+    svg {
+      width: 30px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+    }
+  }
+}
+
+.ce-chat-settings-column {
+  .ce-chat-settings,
+  .ce-dropdown-label,
+  .ce-dropdown,
+  .ce-danger-button {
+    font-weight: 500 !important;
+    color: $inherit;
+    background-color: $inherit;
+    border: $none;
+    border-radius: $unset;
+  }
+
+  #ce-settings-people-dropdown {
+    .ce-autocomplete input {
+      color: $inherit;
+      border: $none;
+    }
+
+    .ce-autocomplete div {
+      font-family: 'Courier New', Courier, monospace !important;
+      color: $accent-tertiary;
+      margin: 0 0.25rem;
+      display: flex;
+      flex-wrap: wrap;
+
+      .ce-add-member-option {
+        font-size: 0.9rem;
+        background-color: $accent-primary;
+        border-radius: 1.25rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .ce-autocomplete-close {
+      display: $none;
+    }
+  }
+}
+
+.ce-default-button {
+  display: $none;
+}
+
+@media (max-width: $breakpoint-tablet) {
+  main.mobile-nav-left-active {
+    .ce-chat-list-column {
+      display: block;
+    }
+
+    .input-box {
+      display: $none;
+    }
+  }
+
+  main.mobile-nav-right-active {
+    .ce-chat-settings-column {
+      display: block;
+    }
+
+    .input-box {
+      display: $none;
+    }
+  }
+
+  .mobile-nav-btn {
+    display: block;
+
+    &.left {
+      left: 25px;
+    }
+
+    &.right {
+      right: 25px;
+    }
+  }
+
+  .ce-chat-list-column,
+  .ce-chat-feed-column,
+  .ce-chat-settings-column {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+
+    .ce-chat-list {
+      position: $inherit;
+      z-index: $inherit;
+    }
+  }
+
+  .ce-chat-list-column,
+  .ce-chat-settings-column {
+    background-color: $default;
+    position: fixed !important;
+    display: none;
+    z-index: 99 !important;
+
+    .ce-chat-settings {
+      position: $unset;
+    }
+  }
+
+  .ce-chat-list-column {
+    padding-top: 75px;
+  }
+
+  .form-container {
+    width: 100%;
+    z-index: 100;
+  }
+}
